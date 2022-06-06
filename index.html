@@ -79,12 +79,15 @@
         </div>
         <div class="row justify-content-center fs-5 text-center">
           <div class="col-md-4">
-            <p>Saya Muhamad Zakaria lahir di kota bogor pada tgl/bln/thn 29-November-1997 saya masuk kuliah pada tahun 2016 dan lulus pada tahun 2021 di universitas pakuan di fakultas MIPA jurusan ilmu komputer</p>
+            <p>
+              Saya Muhamad Zakaria lahir di kota bogor pada tgl/bln/thn 29-November-1997 saya masuk kuliah pada tahun 2016 dan lulus pada tahun 2021 di universitas pakuan di fakultas MIPA jurusan ilmu komputer dan saya orang yang sangat
+              bertanggung jawab terhadap pekerjaan yang saya lakukan serta saya orang yang suka belajar dan suka hal yang baru
+            </p>
           </div>
           <div class="col-md-4">
             <p>
-              keahlian saya di bidang ilmu komputer yaitu menjadi progammer dan saya hoby desain dan editing video selain itu saya bisa mambuat aplikasi berbasis web salah satunya saya pernah membuat project di pusat penelitian pengembangan
-              tanaman pangan kota Bogor
+              keahlian saya di bidang ilmu komputer yaitu menjadi progammer serta saya hoby desain dan editing video selain itu saya bisa mambuat aplikasi berbasis web salah satunya saya pernah membuat project di pusat penelitian
+              pengembangan tanaman pangan kota Bogor dan saya juga berpengalaman di bidang advertising
             </p>
           </div>
         </div>
@@ -175,7 +178,6 @@
         </div>
         <div class="row justify-content-center mb-3">
           <div class="col-md-6">
-
             <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
               <strong>terimakasih pesan anda telah di terima </strong>
               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -189,7 +191,7 @@
 
               <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email"/>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" />
               </div>
               <div class="mb-3">
                 <label for="pesan" class="form-label">Pesan</label>
@@ -197,7 +199,7 @@
               </div>
 
               <button type="submit" class="btn btn-primary btn-kirim">kirim</button>
-              
+
               <button class="btn btn-primary btn-loading d-none" type="button" disabled>
                 <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                 Loading...
@@ -222,41 +224,39 @@
 
     <!-- akhir footer -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 
     <script>
-      const scriptURL ="https://script.google.com/macros/s/AKfycbwSnI1dQj47m8FJNiTT8Z4vQQXIDmlHNrp1bXzZ08ekI9mfk8oAePmSKDhJFmDDVRCs2w/exec";
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbwSnI1dQj47m8FJNiTT8Z4vQQXIDmlHNrp1bXzZ08ekI9mfk8oAePmSKDhJFmDDVRCs2w/exec';
       const form = document.forms['data-zaka-portfolio'];
 
       const btnKirim = document.querySelector(' .btn-kirim');
       const btnLoading = document.querySelector(' .btn-loading');
       const myAlert = document.querySelector(' .my-alert');
-    
-      form.addEventListener('submit', e => {
+
+      form.addEventListener('submit', (e) => {
         e.preventDefault();
-        //ketika tombol di kllik 
+        //ketika tombol di kllik
         //tampilkan loading tampilkan tombol kirim
 
         btnLoading.classList.toggle('d-none');
         btnKirim.classList.toggle('d-none');
 
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-          .then(response => {
-            //tampilkan tombol loading 
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+          .then((response) => {
+            //tampilkan tombol loading
 
             btnLoading.classList.toggle('d-none');
-             btnKirim.classList.toggle('d-none');
+            btnKirim.classList.toggle('d-none');
 
-             //tampilkan alert
-             myAlert.classList.toggle('d-none');
-             form.reset();
-            
-            console.log('Success!', response)})
-          .catch(error => console.error('Error!', error.message))
-      })
+            //tampilkan alert
+            myAlert.classList.toggle('d-none');
+            form.reset();
+
+            console.log('Success!', response);
+          })
+          .catch((error) => console.error('Error!', error.message));
+      });
     </script>
-
-
   </body>
 </html>
